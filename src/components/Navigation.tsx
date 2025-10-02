@@ -27,7 +27,7 @@ export default function Navigation({
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-          &lt;LuisTrujill/&gt;
+          &lt;LuisTrujillo/&gt;
         </div>
 
         <div className="hidden md:flex gap-8">
