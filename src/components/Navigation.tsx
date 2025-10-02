@@ -1,41 +1,21 @@
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X } from 'lucide-react';
 
-export const Navbar = () => {
-  const [activeSection, setActiveSection] = useState<string>("inicio");
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+interface NavigationProps {
+  activeSection: string;
+  scrolled: boolean;
+  menuOpen: boolean;
+  setMenuOpen: (open: boolean) => void;
+  scrollToSection: (id: string) => void;
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      const sections = [
-        "inicio",
-        "experiencia",
-        "tecnologias",
-        "proyectos",
-        "contacto",
-      ];
-      const current = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
-  };
+export default function Navigation({
+  activeSection,
+  scrolled,
+  menuOpen,
+  setMenuOpen,
+  scrollToSection,
+}: NavigationProps) {
+  const sections = ["inicio", "experiencia", "tecnologias", "proyectos", "contacto"];
 
   return (
     <nav
@@ -47,17 +27,11 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-          &lt;DevPortfolio/&gt;
+          &lt;LuisTrujill/&gt;
         </div>
 
         <div className="hidden md:flex gap-8">
-          {[
-            "inicio",
-            "experiencia",
-            "tecnologias",
-            "proyectos",
-            "contacto",
-          ].map((section) => (
+          {sections.map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}
@@ -84,13 +58,7 @@ export const Navbar = () => {
 
       {menuOpen && (
         <div className="md:hidden bg-slate-900/98 backdrop-blur-md border-t border-purple-500/20">
-          {[
-            "inicio",
-            "experiencia",
-            "tecnologias",
-            "proyectos",
-            "contacto",
-          ].map((section) => (
+          {sections.map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}
@@ -103,4 +71,4 @@ export const Navbar = () => {
       )}
     </nav>
   );
-};
+}

@@ -1,6 +1,6 @@
 import type { Proyecto } from "../interfaces/proyecto";
 
-export const proyectos: Proyecto[] = [
+export const projectsData: Proyecto[] = [
      {
       titulo: "E-Commerce Moderno",
       descripcion:
