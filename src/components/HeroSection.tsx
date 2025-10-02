@@ -1,4 +1,5 @@
 import { Code } from "lucide-react";
+import  image  from '../assets/luis1.png' //src={image}
 
 interface HeroSectionProps {
   scrollToSection: (id: string) => void;
@@ -52,7 +53,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
           <div className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl shadow-purple-500/30">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop"
+              src={image}
               alt="Profile"
               className="w-full h-full object-cover"
             />
