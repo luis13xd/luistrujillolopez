@@ -22,14 +22,16 @@ export default function TechnologiesSection() {
     );
   });
 
-  const radius = 250; // radio del anillo
+  // Calcula un radio proporcional al ancho de la ventana
+  const radius = Math.min(window.innerWidth * 0.26, 500);
+
   return (
     <section
       id="tecnologias"
       className="min-h-screen flex flex-col items-center justify-center px-6 py-20"
     >
       {/* Título */}
-      <div className="flex items-center justify-center gap-3 mb-10">
+      <div className="flex items-center justify-center gap-3 mb-2">
         <Wrench className="text-cyan-400" size={40} />
         <h2 className="text-5xl font-bold">
           <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -41,12 +43,12 @@ export default function TechnologiesSection() {
       {/* Carrusel */}
       <div
         className="relative w-full flex items-center justify-center overflow-hidden"
-        style={{ height: radius * 1.2 }}
+        style={{ height: radius * 1 }}
       >
         {items.map((tech, i) => {
           const angle = angles.current[i];
-          const x = 50 + radius * Math.cos(angle);
-          const y = radius * Math.sin(angle) * 0.2;
+          const x = radius * Math.cos(angle) * 1.2;
+          const y = radius * Math.sin(angle) * 0.25;
 
           const scale = 0.5 + (0.5 * (Math.sin(angle) + 1)) / 2;
           const opacity = 0.3 + (0.7 * (Math.sin(angle) + 1)) / 2;
