@@ -6,6 +6,7 @@ import { technologiesData, skillsData } from "../data/tegnologias";
 export interface Technology {
   nombre: string;
   color: string;
+  img?: string | null;
 }
 
 export default function TechnologiesSection() {
@@ -37,15 +38,15 @@ export default function TechnologiesSection() {
         </h2>
       </div>
 
-      {/* Carrusel centrado con altura suficiente */}
+      {/* Carrusel */}
       <div
         className="relative w-full flex items-center justify-center overflow-hidden"
-        style={{ height: radius * 1.2 }} // altura reducida, solo lo necesario
+        style={{ height: radius * 1.2 }}
       >
         {items.map((tech, i) => {
           const angle = angles.current[i];
           const x = 50 + radius * Math.cos(angle);
-          const y = radius * Math.sin(angle) * 0.2; // quitamos el + radius
+          const y = radius * Math.sin(angle) * 0.2;
 
           const scale = 0.5 + (0.5 * (Math.sin(angle) + 1)) / 2;
           const opacity = 0.3 + (0.7 * (Math.sin(angle) + 1)) / 2;
@@ -54,7 +55,7 @@ export default function TechnologiesSection() {
           return (
             <motion.div
               key={tech.nombre}
-              className="absolute top-1/2 left-1/2 flex items-center justify-center"
+              className="absolute top-1/2 left-1/2 flex flex-col items-center justify-center"
               style={{
                 x: `${x}%`,
                 y,
@@ -65,11 +66,26 @@ export default function TechnologiesSection() {
                 translateY: "-50%",
               }}
             >
+              {/* Card con icono */}
               <div
-                className={`w-28 h-28 rounded-2xl bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold shadow-lg`}
+                className={`w-28 h-28 rounded-2xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
               >
-                {tech.nombre.charAt(0)}
+                {tech.img ? (
+                  <img
+                    src={tech.img}
+                    alt={tech.nombre}
+                    className="w-16 h-16 object-contain"
+                  />
+                ) : (
+                  <span className="text-white font-bold text-xl">
+                    {tech.nombre.charAt(0)}
+                  </span>
+                )}
               </div>
+              {/* Nombre debajo */}
+              <span className="mt-2 text-sm font-medium text-white">
+                {tech.nombre}
+              </span>
             </motion.div>
           );
         })}
