@@ -28,7 +28,7 @@ export default function TechnologiesSection() {
       className="min-h-screen flex flex-col items-center justify-center px-6 py-20"
     >
       {/* Título */}
-      <div className="flex items-center justify-center gap-3 mb-20">
+      <div className="flex items-center justify-center gap-3 mb-10">
         <Wrench className="text-cyan-400" size={40} />
         <h2 className="text-5xl font-bold">
           <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -39,13 +39,13 @@ export default function TechnologiesSection() {
 
       {/* Carrusel centrado con altura suficiente */}
       <div
-        className="relative w-full h-50% overflow-hidden mb-2"
-        style={{ height: 2 * radius + 150 }}
+        className="relative w-full flex items-center justify-center overflow-hidden"
+        style={{ height: radius * 1.2 }} // altura reducida, solo lo necesario
       >
         {items.map((tech, i) => {
           const angle = angles.current[i];
           const x = 50 + radius * Math.cos(angle);
-          const y = radius + radius * Math.sin(angle) * 0.2; // centrado vertical
+          const y = radius * Math.sin(angle) * 0.2; // quitamos el + radius
 
           const scale = 0.5 + (0.5 * (Math.sin(angle) + 1)) / 2;
           const opacity = 0.3 + (0.7 * (Math.sin(angle) + 1)) / 2;
@@ -54,7 +54,7 @@ export default function TechnologiesSection() {
           return (
             <motion.div
               key={tech.nombre}
-              className="absolute top-0 left-1/2 flex items-center justify-center"
+              className="absolute top-1/2 left-1/2 flex items-center justify-center"
               style={{
                 x: `${x}%`,
                 y,
