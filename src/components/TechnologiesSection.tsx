@@ -1,45 +1,94 @@
-import { Wrench } from 'lucide-react';
-import { technologiesData, skillsData } from '../data/tegnologias';
+import { useRef } from "react";
+import { motion, useAnimationFrame } from "framer-motion";
+import { Wrench } from "lucide-react";
+import { technologiesData, skillsData } from "../data/tegnologias";
+
+export interface Technology {
+  nombre: string;
+  color: string;
+}
 
 export default function TechnologiesSection() {
+  const speed = 0.02; // velocidad angular
+  const items = technologiesData;
+
+  // posiciones angulares iniciales
+  const angles = useRef(items.map((_, i) => (i / items.length) * 2 * Math.PI));
+
+  useAnimationFrame(() => {
+    angles.current = angles.current.map(
+      (angle) => (angle + speed) % (2 * Math.PI)
+    );
+  });
+
+  const radius = 250; // radio del anillo
   return (
-    <section id="tecnologias" className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="max-w-6xl w-full">
-        <div className="flex items-center justify-center gap-3 mb-16">
-          <Wrench className="text-cyan-400" size={40} />
-          <h2 className="text-5xl font-bold">
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Tecnologías
-            </span>
-          </h2>
-        </div>
+    <section
+      id="tecnologias"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-20"
+    >
+      {/* Título */}
+      <div className="flex items-center justify-center gap-3 mb-20">
+        <Wrench className="text-cyan-400" size={40} />
+        <h2 className="text-5xl font-bold">
+          <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            Tecnologías
+          </span>
+        </h2>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {technologiesData.map((tech, i) => (
-            <div
-              key={i}
-              className="group relative overflow-hidden bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/20 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-110 hover:rotate-2"
+      {/* Carrusel centrado con altura suficiente */}
+      <div
+        className="relative w-full h-50% overflow-hidden mb-2"
+        style={{ height: 2 * radius + 150 }}
+      >
+        {items.map((tech, i) => {
+          const angle = angles.current[i];
+          const x = 50 + radius * Math.cos(angle);
+          const y = radius + radius * Math.sin(angle) * 0.2; // centrado vertical
+
+          const scale = 0.5 + (0.5 * (Math.sin(angle) + 1)) / 2;
+          const opacity = 0.3 + (0.7 * (Math.sin(angle) + 1)) / 2;
+          const zIndex = Math.round(scale * 10);
+
+          return (
+            <motion.div
+              key={tech.nombre}
+              className="absolute top-0 left-1/2 flex items-center justify-center"
+              style={{
+                x: `${x}%`,
+                y,
+                scale,
+                opacity,
+                zIndex,
+                translateX: "-50%",
+                translateY: "-50%",
+              }}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-              <div className="relative z-10 text-center">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-br ${tech.color} flex items-center justify-center text-2xl font-bold shadow-lg`}>
-                  {tech.nombre.charAt(0)}
-                </div>
-                <h3 className="text-xl font-bold">{tech.nombre}</h3>
+              <div
+                className={`w-28 h-28 rounded-2xl bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold shadow-lg`}
+              >
+                {tech.nombre.charAt(0)}
               </div>
-            </div>
-          ))}
-        </div>
+            </motion.div>
+          );
+        })}
+      </div>
 
-        <div className="mt-16 bg-gradient-to-r from-slate-800/50 to-purple-900/30 p-8 rounded-2xl border border-purple-500/20 backdrop-blur-sm">
-          <h3 className="text-2xl font-bold mb-4 text-cyan-400">Otras Habilidades</h3>
-          <div className="flex flex-wrap gap-3">
-            {skillsData.map((skill, i) => (
-              <span key={i} className="px-4 py-2 bg-purple-500/20 rounded-full border border-purple-400/30 hover:bg-purple-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-110">
-                {skill}
-              </span>
-            ))}
-          </div>
+      {/* Skills */}
+      <div className="bg-gradient-to-r from-slate-800/50 to-purple-900/30 p-8 rounded-2xl border border-purple-500/20 backdrop-blur-sm w-full max-w-6xl">
+        <h3 className="text-2xl font-bold mb-4 text-cyan-400">
+          Otras Habilidades
+        </h3>
+        <div className="flex flex-wrap gap-3">
+          {skillsData.map((skill, i) => (
+            <span
+              key={i}
+              className="px-4 py-2 bg-purple-500/20 rounded-full border border-purple-400/30 hover:bg-purple-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
     </section>
