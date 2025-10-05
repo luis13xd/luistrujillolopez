@@ -22,15 +22,15 @@ export default function ContactSection() {
     {
       icon: <Mail size={32} />,
       label: "Email",
-      value: "tu.email@gmail.com",
-      link: "mailto:tu.email@gmail.com",
+      value: "trujillolopezluisxd@gmail.com",
+      link: "mailto:trujillolopezluisxd@gmail.com",
       color: "from-cyan-400 to-blue-500",
     },
     {
       icon: <Github size={32} />,
       label: "GitHub",
-      value: "@tuusuario",
-      link: "https://github.com/tuusuario",
+      value: "@luis13xd",
+      link: "https://github.com/luis13xd",
       color: "from-gray-400 to-gray-600",
     },
     {
@@ -43,7 +43,7 @@ export default function ContactSection() {
     {
       icon: <Phone size={32} />,
       label: "Teléfono",
-      value: "+57 300 123 4567",
+      value: "+57 3138687180",
       link: "tel:+573001234567",
       color: "from-green-400 to-emerald-500",
     },
