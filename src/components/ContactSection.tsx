@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
 import {
   Mail,
   Github,
@@ -13,55 +12,12 @@ import {
   CheckCircle2,
   XCircle,
 } from "lucide-react";
+import { useContactForm } from "../hooks/useContactForm"; // <-- importa tu hook
 
 export default function ContactSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<{ type: "success" | "error" | ""; message: string }>({
-    type: "",
-    message: "",
-  });
-
-  const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus({ type: "", message: "" });
-
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus({ type: "error", message: "Por favor, completa todos los campos." });
-      return;
-    }
-
-    if (!validateEmail(formData.email)) {
-      setStatus({ type: "error", message: "Introduce un correo electrónico válido." });
-      return;
-    }
-
-    setLoading(true);
-    try {
-      await emailjs.send(
-        "service_1nb657g", 
-        "template_aciu372",
-        formData,
-        "p7eJncdwR71DakFrd" 
-      );
-
-      setStatus({ type: "success", message: "¡Mensaje enviado correctamente!" });
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error(error);
-      setStatus({ type: "error", message: "Hubo un error al enviar el mensaje. Intenta nuevamente." });
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { formData, setFormData, handleSubmit, loading, status } =
+    useContactForm();
 
   const contactMethods = [
     {
@@ -170,11 +126,16 @@ export default function ContactSection() {
             {/* Ubicación */}
             <div className="relative h-30 lg:h-30 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm group">
               <div className="absolute inset-0 flex items-center ml-8 md:ml-0 justify-center">
-                <MapPin size={42} className="text-cyan-400 group-hover:scale-125 transition-transform duration-300" />
+                <MapPin
+                  size={42}
+                  className="text-cyan-400 group-hover:scale-125 transition-transform duration-300"
+                />
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8">
                 <p className="text-sm text-gray-400 mb-1">Ubicación</p>
-                <p className="text-md md:text-lg font-semibold">Neiva, Colombia</p>
+                <p className="text-md md:text-lg font-semibold">
+                  Neiva, Colombia
+                </p>
               </div>
             </div>
           </div>
@@ -192,7 +153,7 @@ export default function ContactSection() {
                 Envíame un mensaje
               </h3>
 
-              <div className="space-y-7">
+              <div className="space-y-5">
                 <div>
                   <label className="block text-sm font-semibold mb-2 text-cyan-400">
                     Nombre
@@ -200,7 +161,9 @@ export default function ContactSection() {
                   <input
                     type="text"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     className="w-full px-4 py-3 bg-slate-900/50 border border-purple-500/30 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all"
                     placeholder="Tu nombre completo"
                   />
@@ -213,7 +176,9 @@ export default function ContactSection() {
                   <input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     className="w-full px-4 py-3 bg-slate-900/50 border border-purple-500/30 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all"
                     placeholder="tu@email.com"
                   />
@@ -224,21 +189,29 @@ export default function ContactSection() {
                     Mensaje
                   </label>
                   <textarea
-                    rows={3}
+                    rows={2}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     className="w-full px-4 py-3 bg-slate-900/50 border border-purple-500/30 rounded-lg focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all resize-none"
-                    placeholder="Cuéntame sobre tu proyecto o idea..."
+                    placeholder="Cuéntame sobre tu proyecto, idea o vacante de trabajo "
                   ></textarea>
                 </div>
 
                 {status.message && (
                   <div
-                    className={`flex items-center gap-2 text-sm font-medium ${
-                      status.type === "error" ? "text-red-400" : "text-green-400"
+                    className={`flex items-center gap-1 text-sm font-medium ${
+                      status.type === "error"
+                        ? "text-red-400"
+                        : "text-green-400"
                     }`}
                   >
-                    {status.type === "error" ? <XCircle size={18} /> : <CheckCircle2 size={18} />}
+                    {status.type === "error" ? (
+                      <XCircle size={14} />
+                    ) : (
+                      <CheckCircle2 size={14} />
+                    )}
                     {status.message}
                   </div>
                 )}
@@ -256,7 +229,10 @@ export default function ContactSection() {
                     <>
                       <span className="relative z-10 flex items-center gap-2">
                         Enviar Mensaje
-                        <Send size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+                        <Send
+                          size={20}
+                          className="group-hover/btn:translate-x-1 transition-transform"
+                        />
                       </span>
                       <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                     </>
@@ -268,7 +244,9 @@ export default function ContactSection() {
         </div>
 
         <div className="text-center mt-6">
-          <p className="text-gray-500 text-sm">Respondo en menos de 24 horas ⚡</p>
+          <p className="text-gray-500 text-sm">
+            Respondo en menos de 24 horas ⚡
+          </p>
         </div>
       </div>
 
