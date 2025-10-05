@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Mail, Github, Linkedin, Phone, MapPin, MessageCircle, Send, Code2 } from 'lucide-react';
 
 export default function ContactSection() {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const contactMethods = [
