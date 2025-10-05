@@ -65,7 +65,7 @@ export default function ContactSection() {
         <div className="text-center mb-2">
           <div className="inline-flex items-center gap-3 mb-6">
             <Code2 className="text-cyan-400" size={48} />
-            <h2 className="text-6xl font-bold">
+            <h2 className="text-5xl font-bold">
               <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
                 Contáctame
               </span>
@@ -73,7 +73,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-10">
           {/* Contact Cards & Map */}
           <div className="space-y-6">
             {/* Contact Method Cards */}
@@ -92,7 +92,7 @@ export default function ContactSection() {
                     className={`absolute inset-0 bg-gradient-to-r ${method.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`}
                   ></div>
                   <div className="relative">
-                    <div className="mb-3 text-cyan-400 group-hover:text-white transition-colors transform group-hover:rotate-12 duration-300">
+                    <div className="mb-2 text-cyan-400 group-hover:text-white transition-colors transform group-hover:rotate-12 duration-300">
                       {method.icon}
                     </div>
                     <p className="text-sm text-gray-400 mb-1">{method.label}</p>
@@ -117,27 +117,27 @@ export default function ContactSection() {
               href="https://wa.me/573138687180"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 transition-all duration-300 group"
+              className="flex items-center justify-center gap-3 w-full py-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 transition-all duration-300 group"
             >
               <MessageCircle size={28} className="group-hover:animate-bounce" />
               <span>Chatea en WhatsApp</span>
             </a>
 
             {/* Map */}
-           <div className="relative h-60 lg:h-48 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm group">
-              <div className="absolute inset-0 flex items-center justify-center">
+           <div className="relative h-30 lg:h-30 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm group">
+              <div className="absolute inset-0 flex items-center ml-8 md:ml-0 justify-center">
                 <MapPin
-                  size={48}
+                  size={42}
                   className="text-cyan-400 group-hover:scale-125 transition-transform duration-300"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-6">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8">
                 <p className="text-sm text-gray-400 mb-1">Ubicación</p>
-                <p className="text-lg font-semibold">Neiva, Colombia</p>
+                <p className="text-md md:text-lg font-semibold">Neiva, Colombia</p>
               </div>
               {/* Animated ping effect */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <span className="flex h-20 w-20">
+              <div className="absolute ml-4 md:ml-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <span className="flex h-15 w-15">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-40"></span>
                 </span>
               </div>
@@ -145,17 +145,17 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-slate-800/50 via-purple-900/30 to-slate-800/50 p-8 md:p-10 rounded-2xl border border-purple-500/20 backdrop-blur-sm relative overflow-hidden group lg:max-h-[600px] overflow-y-auto">
+          <div className="bg-gradient-to-br from-slate-800/50 via-purple-900/30 to-slate-800/50 p-6 md:p-8 rounded-2xl border border-purple-500/20 backdrop-blur-sm relative overflow-hidden group lg:max-h-[520px] overflow-y-auto">
             {/* Animated gradient border */}
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
 
             <div className="relative">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <h3 className="text-2xl font-bold mb-3 flex items-center gap-2">
                 <Send className="text-cyan-400" />
                 Envíame un mensaje
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-7">
                 <div className="group/input">
                   <label className="block text-sm font-semibold mb-2 text-cyan-400 group-hover/input:text-purple-400 transition-colors">
                     Nombre
@@ -201,7 +201,7 @@ export default function ContactSection() {
                   ></textarea>
                 </div>
 
-                <button className="w-full py-4 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group/btn relative overflow-hidden">
+                <button className="w-full py-2 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group/btn relative overflow-hidden">
                   <span className="relative z-10 flex items-center gap-2">
                     Enviar Mensaje
                     <Send
@@ -217,7 +217,7 @@ export default function ContactSection() {
         </div>
 
         {/* Bottom decorative text */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-6">
           <p className="text-gray-500 text-sm">
             Respondo en menos de 24 horas ⚡
           </p>
