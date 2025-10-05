@@ -1,4 +1,4 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
   activeSection: string;
@@ -15,7 +15,13 @@ export default function Navigation({
   setMenuOpen,
   scrollToSection,
 }: NavigationProps) {
-  const sections = ["inicio", "experiencia", "tecnologias", "proyectos", "contacto"];
+  const sections = [
+    "inicio",
+    "experiencia",
+    "tecnologias",
+    "proyectos",
+    "contacto",
+  ];
 
   return (
     <nav

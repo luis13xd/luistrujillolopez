@@ -1,5 +1,5 @@
 import { Code } from "lucide-react";
-import  image  from '../assets/luis1.png' //src={image}
+import image from "../assets/luis1.png"; //src={image}
 
 interface HeroSectionProps {
   scrollToSection: (id: string) => void;
@@ -30,8 +30,8 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
 
           <p className="text-xl text-gray-300 leading-relaxed">
             Creo experiencias web excepcionales con código limpio y diseños
-            modernos. Especializado en React, Angular, Node.js y tecnologías web de
-            última generación.
+            modernos. Especializado en React, Angular, Node.js y tecnologías web
+            de última generación.
           </p>
           <div className="flex gap-4 pt-4">
             <button
