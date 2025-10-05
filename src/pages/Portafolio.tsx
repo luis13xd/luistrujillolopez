@@ -1,4 +1,3 @@
-// Portfolio.tsx o App.tsx
 import { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
@@ -12,8 +11,6 @@ export default function Portafolio() {
   const [activeSection, setActiveSection] = useState("inicio");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  // 👇 estado para el cursor
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -68,7 +65,6 @@ export default function Portafolio() {
       <ContactSection />
       <Footer />
 
-      {/* Cursor custom */}
       <div
         className="fixed top-0 left-0 w-6 h-6 rounded-full bg-white pointer-events-none 
                    shadow-[0_0_25px_8px_rgba(255,255,255,0.9)] mix-blend-difference 

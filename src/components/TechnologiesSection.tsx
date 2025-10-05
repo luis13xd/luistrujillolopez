@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useAnimationFrame } from "framer-motion";
 import { Wrench } from "lucide-react";
 import { technologiesData, skillsData } from "../data/tegnologias";
@@ -10,20 +10,18 @@ export interface Technology {
 }
 
 export default function TechnologiesSection() {
-  const speed = 0.02; // velocidad angular
+  const speed = 0.006;
   const items = technologiesData;
-
-  // posiciones angulares iniciales
+  const radius = Math.min(window.innerWidth * 0.26, 500);
   const angles = useRef(items.map((_, i) => (i / items.length) * 2 * Math.PI));
+  const [, setTick] = useState(0);
 
   useAnimationFrame(() => {
     angles.current = angles.current.map(
       (angle) => (angle + speed) % (2 * Math.PI)
     );
+    setTick((t) => (t + 1) % 100000);
   });
-
-  // Calcula un radio proporcional al ancho de la ventana
-  const radius = Math.min(window.innerWidth * 0.26, 500);
 
   return (
     <section
@@ -49,7 +47,6 @@ export default function TechnologiesSection() {
           const angle = angles.current[i];
           const x = radius * Math.cos(angle) * 1.2;
           const y = radius * Math.sin(angle) * 0.25;
-
           const scale = 0.5 + (0.5 * (Math.sin(angle) + 1)) / 2;
           const opacity = 0.3 + (0.7 * (Math.sin(angle) + 1)) / 2;
           const zIndex = Math.round(scale * 10);
@@ -84,8 +81,7 @@ export default function TechnologiesSection() {
                   </span>
                 )}
               </div>
-              {/* Nombre debajo */}
-              <span className="mt-2 text-sm font-medium text-white">
+              <span className="mt-2 text-base font-medium text-white">
                 {tech.nombre}
               </span>
             </motion.div>
@@ -94,7 +90,7 @@ export default function TechnologiesSection() {
       </div>
 
       {/* Skills */}
-      <div className="bg-gradient-to-r from-slate-800/50 to-purple-900/30 p-8 rounded-2xl border border-purple-500/20 backdrop-blur-sm w-full max-w-6xl">
+      <div className="bg-gradient-to-r from-slate-800/50 to-purple-900/30 p-6 rounded-2xl border border-purple-500/20 backdrop-blur-sm w-full max-w-6xl">
         <h3 className="text-2xl font-bold mb-4 text-cyan-400">
           Otras Habilidades
         </h3>
