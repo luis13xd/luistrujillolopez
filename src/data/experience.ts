@@ -26,7 +26,7 @@ export const educationData = [
   {
     titulo: "Ingeniería en Sistemas",
     institucion: "Universidad Surcolombiana",
-    periodo: "2014 - 2018",
+    periodo: "2017 - 2023",
     descripcion:
       "Especialización en desarrollo web y arquitectura de software. Proyecto de grado con mención honorífica.",
   },
