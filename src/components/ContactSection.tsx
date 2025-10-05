@@ -114,7 +114,7 @@ export default function ContactSection() {
 
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/573001234567"
+              href="https://wa.me/573138687180"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 transition-all duration-300 group"
