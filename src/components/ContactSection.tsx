@@ -36,8 +36,8 @@ export default function ContactSection() {
     {
       icon: <Linkedin size={32} />,
       label: "LinkedIn",
-      value: "/in/tuusuario",
-      link: "https://linkedin.com/in/tuusuario",
+      value: "/in/luistrujillolopez",
+      link: "https://www.linkedin.com/in/luistrujillolopez/",
       color: "from-blue-400 to-blue-600",
     },
     {
