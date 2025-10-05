@@ -44,7 +44,7 @@ export default function ContactSection() {
       icon: <Phone size={32} />,
       label: "Teléfono",
       value: "+57 3138687180",
-      link: "tel:+573001234567",
+      link: "tel:+573138687180",
       color: "from-green-400 to-emerald-500",
     },
   ];
@@ -133,7 +133,7 @@ export default function ContactSection() {
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-6">
                 <p className="text-sm text-gray-400 mb-1">Ubicación</p>
-                <p className="text-lg font-semibold">Bogotá, Colombia</p>
+                <p className="text-lg font-semibold">Neiva, Colombia</p>
               </div>
               {/* Animated ping effect */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
