@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import { motion, useAnimationFrame } from "framer-motion";
+import { motion } from "framer-motion";
 import { Wrench } from "lucide-react";
 import { technologiesData, skillsData } from "../data/tegnologias";
+import { useRotatingTechnologies } from "../hooks/useRotatingTechnologies";
 
 export interface Technology {
   nombre: string;
@@ -10,18 +10,7 @@ export interface Technology {
 }
 
 export default function TechnologiesSection() {
-  const speed = 0.006;
-  const items = technologiesData;
-  const radius = Math.min(window.innerWidth * 0.26, 500);
-  const angles = useRef(items.map((_, i) => (i / items.length) * 2 * Math.PI));
-  const [, setTick] = useState(0);
-
-  useAnimationFrame(() => {
-    angles.current = angles.current.map(
-      (angle) => (angle + speed) % (2 * Math.PI)
-    );
-    setTick((t) => (t + 1) % 100000);
-  });
+  const { radius, getItemStyle } = useRotatingTechnologies(technologiesData);
 
   return (
     <section
@@ -43,14 +32,8 @@ export default function TechnologiesSection() {
         className="relative w-full flex items-center justify-center overflow-hidden"
         style={{ height: radius * 1 }}
       >
-        {items.map((tech, i) => {
-          const angle = angles.current[i];
-          const x = radius * Math.cos(angle) * 1.2;
-          const y = radius * Math.sin(angle) * 0.25;
-          const scale = 0.5 + (0.5 * (Math.sin(angle) + 1)) / 2;
-          const opacity = 0.3 + (0.7 * (Math.sin(angle) + 1)) / 2;
-          const zIndex = Math.round(scale * 10);
-
+        {technologiesData.map((tech, i) => {
+          const { x, y, scale, opacity, zIndex } = getItemStyle(i);
           return (
             <motion.div
               key={tech.nombre}
@@ -65,7 +48,6 @@ export default function TechnologiesSection() {
                 translateY: "-50%",
               }}
             >
-              {/* Card con icono */}
               <div
                 className={`w-28 h-28 rounded-2xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
               >
