@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { useAnimationFrame } from "framer-motion";
-import type { Technology } from "../components/TechnologiesSection";
+import type { Technology } from "../interfaces/technology";
 
 export const useRotatingTechnologies = (items: Technology[], speed = 0.006) => {
   const radius = Math.min(window.innerWidth * 0.26, 500);

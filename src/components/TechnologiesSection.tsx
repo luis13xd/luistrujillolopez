@@ -4,12 +4,6 @@ import { technologiesData, skillsData } from "../data/tegnologias";
 import { useRotatingTechnologies } from "../hooks/useRotatingTechnologies";
 import { useState, useEffect } from "react";
 
-export interface Technology {
-  nombre: string;
-  color: string;
-  img?: string | null;
-}
-
 export default function TechnologiesSection() {
   const { radius, getItemStyle } = useRotatingTechnologies(technologiesData);
   const [width, setWidth] = useState<number>(
