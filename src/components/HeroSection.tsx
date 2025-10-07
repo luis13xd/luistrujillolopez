@@ -1,6 +1,6 @@
-import { Code} from "lucide-react";
+import { Code } from "lucide-react";
 import { useState, useEffect } from "react";
-import luis from "../assets/luis1.png"
+import luis from "../assets/luis1.png";
 
 interface HeroSectionProps {
   scrollToSection: (id: string) => void;
@@ -10,11 +10,28 @@ interface HeroSectionProps {
 // Componente de código binario flotante
 const FloatingCode = () => {
   const codeSnippets = [
-    '{ }', '< >', '( )', '[ ]', '/>', '{}', '=>', 
-    'const', 'let', 'fn', 'if', 'for', '&&', '||',
-    '===', '!==', '++', '--', '...', '${}'
+    "{ }",
+    "< >",
+    "( )",
+    "[ ]",
+    "/>",
+    "{}",
+    "=>",
+    "const",
+    "let",
+    "fn",
+    "if",
+    "for",
+    "&&",
+    "||",
+    "===",
+    "!==",
+    "++",
+    "--",
+    "...",
+    "${}",
   ];
-  
+
   const particles = Array.from({ length: 15 }, (_, i) => ({
     id: i,
     code: codeSnippets[Math.floor(Math.random() * codeSnippets.length)],
@@ -45,18 +62,20 @@ const FloatingCode = () => {
 // Componente de líneas de código en el fondo
 const CodeLines = () => {
   const lines = [
-    'function createWebsite() {',
-    '  const magic = true;',
-    '  return <Amazing />',
-    '}',
-    'export default Hero;',
+    "function createWebsite() {",
+    "  const magic = true;",
+    "  return <Amazing />",
+    "}",
+    "export default Hero;",
   ];
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
       <pre className="text-cyan-400 font-mono text-xs md:text-sm absolute top-10 left-10 animate-fade-in-out">
         {lines.map((line, i) => (
-          <div key={i} style={{ animationDelay: `${i * 0.5}s` }}>{line}</div>
+          <div key={i} style={{ animationDelay: `${i * 0.5}s` }}>
+            {line}
+          </div>
         ))}
       </pre>
     </div>
@@ -71,8 +90,8 @@ const useTypingEffect = (text: string, speed: number = 100) => {
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, speed);
       return () => clearTimeout(timeout);
     }
@@ -96,7 +115,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
     >
       {/* Código flotante */}
       <FloatingCode />
-      
+
       {/* Líneas de código en fondo */}
       <CodeLines />
 
@@ -107,15 +126,17 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
         {/* Contenido de texto */}
         <div className="space-y-6">
           {/* Badge animado con iconos de código */}
-          <div 
+          <div
             className={`inline-block transition-all duration-700 transform ${
-              isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-10 opacity-0"
             }`}
-            style={{ transitionDelay: '100ms' }}
+            style={{ transitionDelay: "100ms" }}
           >
             <div className="group relative px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-400/30 backdrop-blur-sm hover:border-cyan-400/60 transition-all duration-300">
               <span className="relative text-cyan-400 flex items-center gap-2 text-xl md:text-2xl font-semibold">
-                <Code size={28} className="animate-pulse-code" /> 
+                <Code size={28} className="animate-pulse-code" />
                 Desarrollador Full Stack
               </span>
             </div>
@@ -123,33 +144,40 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
 
           {/* Título con animación escalonada */}
           <div className="space-y-2">
-            <h1 
+            <h1
               className={`font-bold transition-all duration-700 transform ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
               }`}
-              style={{ transitionDelay: '200ms' }}
+              style={{ transitionDelay: "200ms" }}
             >
               <span className="block text-3xl md:text-5xl group cursor-default">
-                {'<Luis Trujillo López />'.split('').map((char, i) => (
+                {"<Luis Trujillo López />".split("").map((char, i) => (
                   <span
                     key={i}
                     className="inline-block hover:text-cyan-400 transition-colors duration-200"
-                    style={{ 
+                    style={{
                       animationDelay: `${i * 0.05}s`,
-                      color: char === '<' || char === '/' || char === '>' ? '#22d3ee' : 'white'
+                      color:
+                        char === "<" || char === "/" || char === ">"
+                          ? "#22d3ee"
+                          : "white",
                     }}
                   >
-                    {char === ' ' ? '\u00A0' : char}
+                    {char === " " ? "\u00A0" : char}
                   </span>
                 ))}
               </span>
             </h1>
-            
-            <h2 
+
+            <h2
               className={`font-bold transition-all duration-700 transform ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
               }`}
-              style={{ transitionDelay: '300ms' }}
+              style={{ transitionDelay: "300ms" }}
             >
               <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-2xl md:text-4xl py-1 font-mono">
                 {typedText}
@@ -159,11 +187,13 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           </div>
 
           {/* Descripción */}
-          <p 
+          <p
             className={`text-xl text-gray-300 leading-relaxed transition-all duration-700 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
             }`}
-            style={{ transitionDelay: '400ms' }}
+            style={{ transitionDelay: "400ms" }}
           >
             Creo experiencias web excepcionales con código limpio y diseños
             modernos. Especializado en React, Angular, Node.js y tecnologías web
@@ -171,21 +201,23 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           </p>
 
           {/* Botones con efectos de código */}
-          <div 
+          <div
             className={`flex gap-4 pt-2 transition-all duration-700 transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
             }`}
-            style={{ transitionDelay: '500ms' }}
+            style={{ transitionDelay: "500ms" }}
           >
             <button
               onClick={() => scrollToSection("proyectos")}
               className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg font-semibold overflow-hidden hover:shadow-lg hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300"
             >
               <span className="relative flex items-center gap-2 font-mono">
-                Ver Proyectos
+                Proyectos
               </span>
             </button>
-            
+
             <button
               onClick={() => scrollToSection("contacto")}
               className="group relative px-8 py-4 border-2 border-cyan-400 rounded-lg font-semibold hover:bg-cyan-400/10 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
@@ -200,43 +232,55 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
         </div>
 
         {/* Imagen con efectos de terminal/código */}
-        <div 
+        <div
           className={`relative transition-all duration-1000 transform ${
-            isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
           }`}
-          style={{ transitionDelay: '600ms' }}
+          style={{ transitionDelay: "600ms" }}
         >
           {/* Brackets giratorios de código */}
           <div className="absolute inset-0 animate-spin-bracket-slow pointer-events-none">
-            <div className="absolute -top-4 -left-4 text-6xl text-cyan-400/30 font-mono">{'<'}</div>
-            <div className="absolute -bottom-4 -right-4 text-6xl text-purple-400/30 font-mono rotate-180">{'>'}</div>
+            <div className="absolute -top-4 -left-4 text-6xl text-cyan-400/30 font-mono">
+              {"<"}
+            </div>
+            <div className="absolute -bottom-4 -right-4 text-6xl text-purple-400/30 font-mono rotate-180">
+              {">"}
+            </div>
           </div>
-          
+
           {/* Resplandor pulsante */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          
+
           {/* Círculos de carga tipo terminal */}
           <div className="absolute -inset-2 opacity-30">
             <div className="absolute top-0 left-1/2 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
-            <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-            <div className="absolute left-0 top-1/2 w-2 h-2 bg-pink-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute right-0 top-1/2 w-2 h-2 bg-cyan-400 rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
+            <div
+              className="absolute bottom-0 left-1/2 w-2 h-2 bg-purple-400 rounded-full animate-ping"
+              style={{ animationDelay: "0.5s" }}
+            ></div>
+            <div
+              className="absolute left-0 top-1/2 w-2 h-2 bg-pink-400 rounded-full animate-ping"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            <div
+              className="absolute right-0 top-1/2 w-2 h-2 bg-cyan-400 rounded-full animate-ping"
+              style={{ animationDelay: "1.5s" }}
+            ></div>
           </div>
-          
+
           {/* Contenedor de imagen con borde de código */}
           <div className="relative w-60 h-60 sm:w-80 sm:h-80 mx-auto rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl shadow-purple-500/30 group hover:border-cyan-400/60 transition-all duration-300">
             {/* Efecto de escaneo de línea */}
             <div className="absolute inset-0 pointer-events-none z-10">
               <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent animate-scan-line"></div>
             </div>
-            
-            <img
-  src={luis}
-  alt="Profile"
-  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-/>
 
-            
+            <img
+              src={luis}
+              alt="Profile"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+
             {/* Overlay de matriz de código */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-mono text-xs overflow-hidden">
               <div className="animate-matrix-rain text-cyan-400/20">
@@ -246,9 +290,21 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           </div>
 
           {/* Símbolos de código flotantes alrededor de la imagen */}
-          <div className="absolute top-10 -left-8 text-cyan-400/40 text-2xl font-mono animate-float-symbol">{'{ }'}</div>
-          <div className="absolute bottom-10 -right-8 text-purple-400/40 text-2xl font-mono animate-float-symbol" style={{ animationDelay: '1s' }}>{'< >'}</div>
-          <div className="absolute top-1/2 -left-6 text-pink-400/40 text-xl font-mono animate-float-symbol" style={{ animationDelay: '2s' }}>{'( )'}</div>
+          <div className="absolute top-10 -left-8 text-cyan-400/40 text-2xl font-mono animate-float-symbol">
+            {"{ }"}
+          </div>
+          <div
+            className="absolute bottom-10 -right-8 text-purple-400/40 text-2xl font-mono animate-float-symbol"
+            style={{ animationDelay: "1s" }}
+          >
+            {"< >"}
+          </div>
+          <div
+            className="absolute top-1/2 -left-6 text-pink-400/40 text-xl font-mono animate-float-symbol"
+            style={{ animationDelay: "2s" }}
+          >
+            {"( )"}
+          </div>
         </div>
       </div>
 
