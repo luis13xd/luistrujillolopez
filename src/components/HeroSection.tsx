@@ -1,4 +1,4 @@
-import { Code, Terminal, Braces, GitBranch } from "lucide-react";
+import { Code} from "lucide-react";
 import { useState, useEffect } from "react";
 import luis from "../assets/luis1.png"
 
