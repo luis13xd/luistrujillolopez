@@ -11,7 +11,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
       id="inicio"
       className="min-h-screen flex items-center justify-center px-6 pt-15 sm:pt-20"
     >
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-6 sm:gap-12 items-center">
         <div className="space-y-6 animate-fade-in">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-400/30 backdrop-blur-sm">
             <span className="text-cyan-400 flex items-center gap-2 text-xl md:text-2xl font-semibold">
@@ -33,7 +33,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
             modernos. Especializado en React, Angular, Node.js y tecnologías web
             de última generación.
           </p>
-          <div className="flex gap-4 pt-4">
+          <div className="flex gap-4 pt-2">
             <button
               onClick={() => scrollToSection("proyectos")}
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300"
