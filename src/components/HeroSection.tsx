@@ -9,7 +9,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex items-center justify-center px-6 pt-20"
+      className="min-h-screen flex items-center justify-center px-6 pt-15 sm:pt-20"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6 animate-fade-in">
@@ -51,7 +51,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
 
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl shadow-purple-500/30">
+          <div className="relative w-60 h-60 sm:w-80 sm:h-80 mx-auto rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl shadow-purple-500/30">
             <img
               src={image}
               alt="Profile"
