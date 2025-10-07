@@ -4,21 +4,21 @@ export const experienceData = [
     empresa: "Lowit",
     periodo: "2024 - 2025",
     descripcion:
-      "Construcción de soluciones web completas usando MERN stack. Implementación de APIs RESTful.",
+      "Lideré el desarrollo del Seller Center (React, TypeScript, Next.js, MongoDB) para optimizar la administración de pedidos mejorando la gestión de pedidos y reduciendo tiempos de carga en un 40% implementando lazy loading y code splitting.",
   },
   {
     puesto: "Frontend Developer",
     empresa: "Lowit",
     periodo: "2023 - 2024",
     descripcion:
-      "Desarrollo de aplicaciones web escalables con React y Next.js. Liderazgo de equipo y mentoría.",
+      "Desarrollé +50 pantallas funcionales y responsivas para la app Lowit usando React Native y TypeScript, mejorando la experiencia de usuario.",
   },
   {
     puesto: "Web Developer",
     empresa: "Universidad Surcolombiana",
     periodo: "2022 - 2023",
     descripcion:
-      "Desarrollo frontend con JavaScript vanilla y frameworks modernos. Optimización de rendimiento.",
+      "Desarrollé e implementé el módulo de encuestas P.O.P. (Angular, Java, Spring Boot, PostgreSQL), creando dashboards dinámicos que proporcionaron a la administración información crucial sobre la aceptación de programas, facilitando la toma de decisiones en el proceso de admisión.",
   },
 ];
 
