@@ -33,11 +33,15 @@ export const technologiesData = [
 ];
 
 export const skillsData = [
-  "REST APIs",
-  "GraphQL",
+  "Rest Apis",
+  "Spring Boot",
   "Docker",
+  "Java",
   "AWS",
+  "Redux",
+  "React Native",
   "CI/CD",
+  "JWT",
   "Testing",
   "Agile/Scrum",
   "UI/UX Design",
