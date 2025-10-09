@@ -1,5 +1,7 @@
 import type { Proyecto } from "../interfaces/proyecto";
-import arual from '../assets/arual.png'
+import arual from '../assets/arual.png';
+import seller from '../assets/seller.png';
+import lowitapp from '../assets/lowitapp.png';
 
 export const projectsData: Proyecto[] = [
      {
@@ -10,12 +12,11 @@ export const projectsData: Proyecto[] = [
       imagen: arual
     },
     {
-      titulo: "Dashboard Analytics",
+      titulo: "Seller Center Lowit",
       descripcion:
-        "Panel de control interactivo con visualización de datos en tiempo real y reportes personalizados.",
-      tecnologias: ["React", "TypeScript", "Chart.js"],
-      imagen:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+        "Panel de control interactivo para la adiministración de pedidos, visualización de datos en tiempo real y reportes personalizados.",
+      tecnologias: ["React", "TypeScript", "Node.js", "Express", "MongoDb", "Tailwind"],
+      imagen: seller
     },
     {
       titulo: "Red Social Profesional",
