@@ -2,6 +2,22 @@ import { FolderGit2, ExternalLink, Github } from "lucide-react";
 import { projectsData } from "../data/proyectos";
 
 export default function ProjectsSection() {
+  const handleVerDemo = (url?: string) => {
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+      alert("Demo no disponible");
+    }
+  };
+
+  const handleVerCodigo = (url?: string) => {
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+      alert("Código no disponible");
+    }
+  };
+
   return (
     <section
       id="proyectos"
@@ -50,10 +66,16 @@ export default function ProjectsSection() {
                 </div>
 
                 <div className="flex gap-3">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-1">
+                  <button
+                    onClick={() => handleVerDemo(proyecto.urlDemo)}
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-1"
+                  >
                     <ExternalLink size={18} /> Ver Demo
                   </button>
-                  <button className="flex items-center gap-2 px-4 py-2 border border-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-all duration-300 hover:transform hover:-translate-y-1">
+                  <button
+                    onClick={() => handleVerCodigo(proyecto.urlCodigo)}
+                    className="flex items-center gap-2 px-4 py-2 border border-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-all duration-300 hover:transform hover:-translate-y-1"
+                  >
                     <Github size={18} /> Código
                   </button>
                 </div>

@@ -4,4 +4,6 @@ export interface Proyecto {
   descripcion: string;
   tecnologias: string[];
   imagen: string;
+  urlDemo?: string;
+  urlCodigo?: string;
 }
