@@ -5,5 +5,5 @@ export interface Proyecto {
   tecnologias: string[];
   imagen: string;
   urlDemo?: string;
-  urlCodigo?: string;
+  urlCodigo?: string | string[]; 
 }

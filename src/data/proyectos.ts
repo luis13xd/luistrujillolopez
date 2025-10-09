@@ -46,6 +46,9 @@ export const projectsData: Proyecto[] = [
     tecnologias: ["React", "Node.js", "Express", "MongoDb", "Tailwind"],
     imagen: infusion,
     urlDemo: "https://restauranteinfusion.netlify.app/",
-    urlCodigo: "https://gitlab.com/lowit-team/lowit-app-users",
+    urlCodigo: [
+      "https://github.com/luis13xd/frontend-restaurante",
+      "https://github.com/luis13xd/backend-restaurante",
+    ],
   },
 ];

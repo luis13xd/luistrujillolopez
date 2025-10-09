@@ -10,11 +10,18 @@ export default function ProjectsSection() {
     }
   };
 
-  const handleVerCodigo = (url?: string) => {
-    if (url) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    } else {
+  const handleVerCodigo = (url?: string | string[]) => {
+    if (!url) {
       alert("Código no disponible");
+      return;
+    }
+
+    // Si es un array, abrir todas las URLs
+    if (Array.isArray(url)) {
+      url.forEach((u) => window.open(u, "_blank", "noopener,noreferrer"));
+    } else {
+      // Si es un string, abrir solo esa URL
+      window.open(url, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -70,14 +77,28 @@ export default function ProjectsSection() {
                     onClick={() => handleVerDemo(proyecto.urlDemo)}
                     className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-1"
                   >
-                    <ExternalLink size={18} /> Ver Demo
+                    <ExternalLink size={18} />Demo
                   </button>
-                  <button
-                    onClick={() => handleVerCodigo(proyecto.urlCodigo)}
-                    className="flex items-center gap-2 px-4 py-2 border border-cyan-400 rounded-lg hover:bg-cyan-400/10 transition-all duration-300 hover:transform hover:-translate-y-1"
-                  >
-                    <Github size={18} /> Código
-                  </button>
+                  {Array.isArray(proyecto.urlCodigo) ? (
+                    proyecto.urlCodigo.map((link, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() =>
+                          window.open(link, "_blank", "noopener,noreferrer")
+                        }
+                        className="flex items-center gap-1 px-2 py-2 border border-cyan-400 rounded-lg hover:bg-cyan-400/10"
+                      >
+                        <Github size={18} /> Código
+                      </button>
+                    ))
+                  ) : (
+                    <button
+                      onClick={() => handleVerCodigo(proyecto.urlCodigo)}
+                      className="flex items-center gap-1 px-2 py-2 border border-cyan-400 rounded-lg hover:bg-cyan-400/10"
+                    >
+                      <Github size={18} /> Código
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
