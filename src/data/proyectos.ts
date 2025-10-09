@@ -7,24 +7,23 @@ export const projectsData: Proyecto[] = [
      {
       titulo: "ARUAL SPORT E-Commerce",
       descripcion:
-        "Plataforma completa de comercio electrónico con carrito de compras, pasarela de pagos y panel administrativo.",
+        "Plataforma completa de comercio electrónico con carrito de compras, categorización, pasarela de pagos y panel administrativo.",
       tecnologias: ["React", "Vite", "Node.js", "MongoDB"],
       imagen: arual
     },
     {
       titulo: "Seller Center Lowit",
       descripcion:
-        "Panel de control interactivo para la adiministración de pedidos, visualización de datos en tiempo real y reportes personalizados.",
+        "Panel de control interactivo para la creación y adiministración de pedidos, visualización de datos en tiempo real y reportes personalizados.",
       tecnologias: ["React", "TypeScript", "Node.js", "Express", "MongoDb", "Tailwind"],
       imagen: seller
     },
     {
-      titulo: "Red Social Profesional",
+      titulo: "App Lowit",
       descripcion:
-        "Aplicación web para networking profesional con chat en tiempo real y sistema de conexiones.",
-      tecnologias: ["Next.js", "Socket.io", "PostgreSQL"],
-      imagen:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+        "Aplicación móvil para pedir comida, contien registro de usuarios, exploración de restaurantes, puedes adquirir membresías con beneficios, realizar pedidos diarios, seguimiento en tiempo real del pedido, historial detallado de tus compras, gestión de tus datos personales y de ubicación.",
+      tecnologias: ["React Native", "Node.js", "Express", "Tailwind", "MongoDb"],
+      imagen: lowitapp
     },
     {
       titulo: "Sistema de Gestión",
