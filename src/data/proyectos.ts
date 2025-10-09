@@ -22,7 +22,7 @@ export const projectsData: Proyecto[] = [
     {
       titulo: "App Lowit",
       descripcion:
-        "Aplicación móvil para pedir comida, registro de usuarios, exploración de restaurantes, adquirir membresías con beneficios, realizar pedidos diarios, seguimiento en tiempo real del pedido, historial de tus compras, gestión de tus datos personales y de ubicación.",
+        "Aplicación móvil para pedir comida, registro de usuarios, exploración de restaurantes, adquirir membresías, realizar pedidos diarios, seguimiento en tiempo real del pedido, historial de tus compra y gestión de tus datos personales.",
       tecnologias: ["React Native", "Node.js", "Express", "Tailwind", "MongoDb"],
       imagen: lowitapp
     },

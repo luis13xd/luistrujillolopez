@@ -24,7 +24,7 @@ export const experienceData = [
 
 export const educationData = [
   {
-    titulo: "Ingeniería en Sistemas",
+    titulo: "Ingeniería de Software",
     institucion: "Universidad Surcolombiana",
     periodo: "2017 - 2023",
     descripcion:

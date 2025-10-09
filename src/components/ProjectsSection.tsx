@@ -32,7 +32,7 @@ export default function ProjectsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
               </div>
 
-              <div className="p-6">
+              <div className="p-4">
                 <h3 className="text-2xl font-bold mb-3 text-cyan-400">
                   {proyecto.titulo}
                 </h3>
