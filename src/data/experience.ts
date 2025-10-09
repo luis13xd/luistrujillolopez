@@ -11,7 +11,7 @@ export const experienceData = [
     empresa: "Lowit",
     periodo: "2023 - 2024",
     descripcion:
-      "Desarrollé +50 pantallas funcionales y responsivas para la app Lowit usando React Native y TypeScript, mejorando la experiencia de usuario.",
+      "Desarrollé +50 pantallas funcionales y responsivas para la app Lowit usando React Native y TypeScript. También participé en el desarrollo de la página principal de Lowit, implementando interfaces modernas y responsivas con Next.js y Tailwind CSS, garantizando una experiencia de usuario fluida en diferentes dispositivos."
   },
   {
     puesto: "Web Developer",
@@ -28,20 +28,20 @@ export const educationData = [
     institucion: "Universidad Surcolombiana",
     periodo: "2017 - 2023",
     descripcion:
-      "Especialización en desarrollo web y arquitectura de software. Proyecto de grado con mención honorífica.",
+      "Formación profesional enfocada en el análisis, diseño y desarrollo de sistemas informáticos. Incluyó proyectos de software, bases de datos y gestión tecnológica.",
   },
   {
     titulo: "Técnico en Programación de Software",
     institucion: "Servicio Nacional de Aprendizaje SENA",
-    periodo: "2015-2016",
+    periodo: "2015 - 2016",
     descripcion:
-      "Curso especializado en React, Redux, Hooks y arquitectura de componentes modernos.",
+      "Capacitación en fundamentos de programación, lógica computacional, bases de datos y desarrollo de aplicaciones de escritorio y web.",
   },
   {
-    titulo: "Técnico en manejo basico de herramientas Informaticas",
+    titulo: "Técnico en Manejo Básico de Herramientas Informáticas",
     institucion: "Servicio Nacional de Aprendizaje SENA",
-    periodo: "2015-2016",
+    periodo: "2014 - 2015",
     descripcion:
-      "Certificación completa en desarrollo web frontend y backend con JavaScript.",
+      "Formación en el uso eficiente de sistemas operativos, procesadores de texto, hojas de cálculo y herramientas ofimáticas esenciales.",
   },
 ];
