@@ -1,13 +1,13 @@
 import type { Proyecto } from "../interfaces/proyecto";
+import arual from '../assets/arual.png'
 
 export const projectsData: Proyecto[] = [
      {
-      titulo: "E-Commerce Moderno",
+      titulo: "ARUAL SPORT E-Commerce",
       descripcion:
         "Plataforma completa de comercio electrónico con carrito de compras, pasarela de pagos y panel administrativo.",
-      tecnologias: ["React", "Node.js", "MongoDB"],
-      imagen:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop",
+      tecnologias: ["React", "Vite", "Node.js", "MongoDB"],
+      imagen: arual
     },
     {
       titulo: "Dashboard Analytics",
