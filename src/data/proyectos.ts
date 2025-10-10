@@ -7,7 +7,7 @@ import ponderados from "../assets/ponderados.png";
 
 export const projectsData: Proyecto[] = [
   {
-    titulo: "ARUAL SPORT E-Commerce",
+    titulo: "ARUAL SPORT",
     descripcion:
       "Plataforma completa de comercio electrónico de ropa deportiva con carrito de compras, categorización, recomendación de prendas, pasarela de pagos y panel administrativo.",
     tecnologias: ["React", "Vite", "Node.js", "MongoDB"],
