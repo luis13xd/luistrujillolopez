@@ -3,6 +3,7 @@ import arual from "../assets/arual.png";
 import seller from "../assets/seller.png";
 import lowitapp from "../assets/lowitapp.png";
 import infusion from "../assets/infusion2.png";
+import ponderados from "../assets/ponderados.png";
 
 export const projectsData: Proyecto[] = [
   {
@@ -45,6 +46,18 @@ export const projectsData: Proyecto[] = [
       "Web para la creación de la carta del restaurante Infusión, registro de usuarios, visualización de la carta, realizar pedidos, creación y visualización de cartelera de peliculas, administracion y control de pedidos e inventario.",
     tecnologias: ["React", "Node.js", "Express", "MongoDb", "Tailwind"],
     imagen: infusion,
+    urlDemo: "https://restauranteinfusion.netlify.app/",
+    urlCodigo: [
+      "https://github.com/luis13xd/frontend-restaurante",
+      "https://github.com/luis13xd/backend-restaurante",
+    ],
+  },
+  {
+    titulo: "Ponderados USCO",
+    descripcion:
+      "Simulador de ponderados universitario usado para que los aspirantes puedan calcular una estimación de su puntaje ponderado de ingreso a una carrera específica de la Universidad Surcolombiana",
+    tecnologias: ["Angular", "Java", "Spring Boot", "PostgreSQL", "Docker"],
+    imagen: ponderados,
     urlDemo: "https://restauranteinfusion.netlify.app/",
     urlCodigo: [
       "https://github.com/luis13xd/frontend-restaurante",
