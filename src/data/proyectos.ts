@@ -61,8 +61,7 @@ export const projectsData: Proyecto[] = [
     imagen: ponderados,
     urlDemo: "https://huacayo.usco.edu.co/ponderados/home/simulator",
     urlCodigo: [
-      "https://github.com/luis13xd/frontend-restaurante",
-      "https://github.com/luis13xd/backend-restaurante",
+      "https://github.com/luis13xd/ponderadosapi/tree/main/usco-ponderado-api",
     ],
   },
   {
@@ -73,8 +72,7 @@ export const projectsData: Proyecto[] = [
     imagen: encuesta,
     urlDemo: "https://huacayo.usco.edu.co/ponderados/register",
     urlCodigo: [
-      "https://github.com/luis13xd/frontend-restaurante",
-      "https://github.com/luis13xd/backend-restaurante",
+      "https://github.com/luis13xd/ponderadosapi/tree/main/usco-ponderado-api",
     ],
   },
 ];
