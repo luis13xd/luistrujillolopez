@@ -123,42 +123,42 @@ export default function ContactSection() {
               <span>Chatea en WhatsApp</span>
             </a>
 
-            {/* Ubicación */}
-            {/* Ubicación */}
-            <div className="relative h-30 lg:h-30 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm flex flex-col items-center justify-center">
-              <div className="relative flex items-center justify-center">
-                {/* Ícono con destello de luz parpadeante */}
-                <MapPin
-                  size={42}
-                  className="text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)] glow-pulse"
-                />
-              </div>
+{/* Ubicación */}
+<div className="relative h-30 lg:h-30 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm flex flex-col items-center justify-center">
+  <div className="relative flex items-center justify-center">
+    {/* Ícono con destello de luz más intenso y rápido */}
+    <MapPin
+      size={42}
+      className="text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.9)] glow-pulse-strong"
+    />
+  </div>
 
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8 text-center md:text-left">
-                <p className="text-sm text-gray-400 mb-1">Ubicación</p>
-                <p className="text-md md:text-lg font-semibold">
-                  Neiva, Colombia
-                </p>
-              </div>
+  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8 text-center md:text-left">
+    <p className="text-sm text-gray-400 mb-1">Ubicación</p>
+    <p className="text-md md:text-lg font-semibold">Neiva, Colombia</p>
+  </div>
 
-              <style>{`
-    @keyframes glowPulse {
+  <style>{`
+    @keyframes glowPulseStrong {
       0%, 100% {
-        filter: drop-shadow(0 0 8px rgba(34,211,238,0.7))
-                drop-shadow(0 0 16px rgba(34,211,238,0.4));
+        filter: drop-shadow(0 0 12px rgba(34,211,238,1))
+                drop-shadow(0 0 25px rgba(34,211,238,0.8))
+                drop-shadow(0 0 40px rgba(34,211,238,0.6));
         opacity: 1;
       }
       50% {
-        filter: drop-shadow(0 0 20px rgba(34,211,238,1))
-                drop-shadow(0 0 35px rgba(34,211,238,0.8));
+        filter: drop-shadow(0 0 25px rgba(34,211,238,1))
+                drop-shadow(0 0 50px rgba(34,211,238,1))
+                drop-shadow(0 0 80px rgba(34,211,238,0.9));
         opacity: 0.85;
       }
     }
-    .glow-pulse {
-      animation: glowPulse 2s ease-in-out infinite;
+    .glow-pulse-strong {
+      animation: glowPulseStrong 1.2s ease-in-out infinite;
     }
   `}</style>
-            </div>
+</div>
+
           </div>
 
           {/* Formulario */}
