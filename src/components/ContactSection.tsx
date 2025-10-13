@@ -124,19 +124,40 @@ export default function ContactSection() {
             </a>
 
             {/* Ubicación */}
-            <div className="relative h-30 lg:h-30 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm group">
-              <div className="absolute inset-0 flex items-center ml-8 md:ml-0 justify-center">
+            {/* Ubicación */}
+            <div className="relative h-30 lg:h-30 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm flex flex-col items-center justify-center">
+              <div className="relative flex items-center justify-center">
+                {/* Ícono con destello de luz parpadeante */}
                 <MapPin
                   size={42}
-                  className="text-cyan-400 group-hover:scale-125 transition-transform duration-300"
+                  className="text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)] glow-pulse"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8">
+
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-8 text-center md:text-left">
                 <p className="text-sm text-gray-400 mb-1">Ubicación</p>
                 <p className="text-md md:text-lg font-semibold">
                   Neiva, Colombia
                 </p>
               </div>
+
+              <style>{`
+    @keyframes glowPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(34,211,238,0.7))
+                drop-shadow(0 0 16px rgba(34,211,238,0.4));
+        opacity: 1;
+      }
+      50% {
+        filter: drop-shadow(0 0 20px rgba(34,211,238,1))
+                drop-shadow(0 0 35px rgba(34,211,238,0.8));
+        opacity: 0.85;
+      }
+    }
+    .glow-pulse {
+      animation: glowPulse 2s ease-in-out infinite;
+    }
+  `}</style>
             </div>
           </div>
 
