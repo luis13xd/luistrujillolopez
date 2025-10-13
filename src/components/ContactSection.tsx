@@ -125,7 +125,7 @@ export default function ContactSection() {
 
             {/* Ubicación */}
             <div className="relative h-40 lg:h-30 bg-slate-800/50 rounded-2xl border border-purple-500/20 overflow-hidden backdrop-blur-sm flex flex-col items-center justify-center">
-              <div className="relative flex items-center justify-center mt-4 mb-6 md:mb-0">
+              <div className="relative flex items-center justify-center mt-3 mb-6 md:mb-0">
                 {/* Ícono con destello de luz parpadeante */}
                 <MapPin
                   size={42}
@@ -144,14 +144,16 @@ export default function ContactSection() {
               <style>{`
                 @keyframes glowPulse {
                   0%, 100% {
-                    filter: drop-shadow(0 0 8px rgba(34,211,238,0.7))
-                            drop-shadow(0 0 16px rgba(34,211,238,0.4));
+                    /* Base: Brillo al inicio y final. Ligeramente más intenso que el original para que la transición se vea mejor. */
+                    filter: drop-shadow(0 0 15px rgba(34,211,238,0.85)) /* Radio de 15px */
+                            drop-shadow(0 0 25px rgba(34,211,238,0.6)); /* Radio de 25px */
                     opacity: 1;
                   }
                   50% {
-                    filter: drop-shadow(0 0 20px rgba(34,211,238,1))
-                            drop-shadow(0 0 35px rgba(34,211,238,0.8));
-                    opacity: 0.85;
+                    /* Pico Extremo: Máxima intensidad y amplitud */
+                    filter: drop-shadow(0 0 45px rgba(34,211,238,1)) /* ¡Aumentado a 45px de radio! y opacidad al 100% */
+                            drop-shadow(0 0 60px rgba(34,211,238,0.95)); /* ¡Aumentado a 70px de radio! y opacidad casi al 100% */
+                    opacity: 1; /* Máxima solidez del color */
                   }
                 }
                 .glow-pulse {
