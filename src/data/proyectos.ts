@@ -5,6 +5,7 @@ import lowitapp from "../assets/lowitapp.png";
 import infusion from "../assets/infusion2.png";
 import ponderados from "../assets/ponderados.png";
 import encuesta from "../assets/encuesta.png";
+import portafolio from "../assets/portafolio.png";
 
 export const projectsData: Proyecto[] = [
   {
@@ -80,7 +81,7 @@ export const projectsData: Proyecto[] = [
     descripcion:
       "Plataforma completa para hacer encuestas que analiza las respuestas para conocer la demanda y afinidad real de los estudiantes hacia los programas existentes, arrojan como resultado graficos, tablas y porcentajes.",
     tecnologias: ["Angular", "Java", "Spring Boot", "PostgreSQL", "Docker"],
-    imagen: encuesta,
+    imagen: portafolio,
     urlDemo: "https://luistrujillo.netlify.app/",
     urlCodigo: [
       "https://github.com/luis13xd/ponderadosapi/tree/main/usco-ponderado-api",
