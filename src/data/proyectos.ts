@@ -84,7 +84,7 @@ export const projectsData: Proyecto[] = [
     imagen: portafolio,
     urlDemo: "https://luistrujillo.netlify.app/",
     urlCodigo: [
-      "https://github.com/luis13xd/ponderadosapi/tree/main/usco-ponderado-api",
+      "https://github.com/luis13xd/luistrujillolopez",
     ],
   },
 ];
