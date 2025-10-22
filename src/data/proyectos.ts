@@ -75,4 +75,15 @@ export const projectsData: Proyecto[] = [
       "https://github.com/luis13xd/ponderadosapi/tree/main/usco-ponderado-api",
     ],
   },
+    {
+    titulo: "Módulo Encuestas P.O.P USCO",
+    descripcion:
+      "Plataforma completa para hacer encuestas que analiza las respuestas para conocer la demanda y afinidad real de los estudiantes hacia los programas existentes, arrojan como resultado graficos, tablas y porcentajes.",
+    tecnologias: ["Angular", "Java", "Spring Boot", "PostgreSQL", "Docker"],
+    imagen: encuesta,
+    urlDemo: "https://luistrujillo.netlify.app/",
+    urlCodigo: [
+      "https://github.com/luis13xd/ponderadosapi/tree/main/usco-ponderado-api",
+    ],
+  },
 ];
