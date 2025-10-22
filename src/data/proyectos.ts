@@ -79,8 +79,8 @@ export const projectsData: Proyecto[] = [
     {
     titulo: "Portafolio Web",
     descripcion:
-      "Plataforma completa para hacer encuestas que analiza las respuestas para conocer la demanda y afinidad real de los estudiantes hacia los programas existentes, arrojan como resultado graficos, tablas y porcentajes.",
-    tecnologias: ["React", "Tailwind", "TypeScrit", "Vite"],
+      "Web usada como mi portafolio web, tiene animaciones llamativas, adaptada a diferentes pantallas, codigo limpio y estructurado, usé las mejores practicas.",
+    tecnologias: ["React", "TypeScript", "Tailwind", "Vite"],
     imagen: portafolio,
     urlDemo: "https://luistrujillo.netlify.app/",
     urlCodigo: [
