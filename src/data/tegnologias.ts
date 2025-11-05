@@ -36,6 +36,7 @@ export const skillsData = [
   "Rest Apis",
   "Spring Boot",
   "Docker",
+  "PL/SQL",
   "Java",
   "AWS",
   "Redux",
