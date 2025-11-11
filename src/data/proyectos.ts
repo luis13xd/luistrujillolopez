@@ -6,6 +6,7 @@ import infusion from "../assets/infusion2.png";
 import ponderados from "../assets/ponderados.png";
 import encuesta from "../assets/encuesta.png";
 import portafolio from "../assets/portafolio.png";
+import huila from "../assets/huila.png";
 
 export const projectsData: Proyecto[] = [
   {
@@ -45,7 +46,7 @@ export const projectsData: Proyecto[] = [
       "MongoDb",
       "Tailwind",
     ],
-    imagen: seller,
+    imagen: huila,
     urlDemo: "https://sellers.lowit.com.co/login",
     urlCodigo: "https://gitlab.com/lowit-team/lowit-sellers",
   },
