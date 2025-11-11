@@ -42,7 +42,7 @@ export const projectsData: Proyecto[] = [
     imagen: huila,
     urlDemo: "https://huila-explorer.netlify.app/",
     urlCodigo: [
-      "https://github.com/luis13xd/frontend-restaurante",
+      "https://github.com/luis13xd/frontend-huila-explorer",
       "https://github.com/luis13xd/backend-restaurante",
     ],
   },
