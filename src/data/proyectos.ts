@@ -38,16 +38,13 @@ export const projectsData: Proyecto[] = [
     titulo: "Huila Explorer",
     descripcion:
       "Red Social para mostrar sitios turisticos del huila, cuenta con su panel administrador para agregar sitios turisticos, administrar usuarios, hacer comentarios a las publicaciones, graficas con metricas...",
-    tecnologias: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDb",
-      "Tailwind",
-    ],
+    tecnologias: ["React", "Node.js", "Express", "MongoDb", "Tailwind"],
     imagen: huila,
     urlDemo: "https://huila-explorer.netlify.app/",
-    urlCodigo: "https://gitlab.com/lowit-team/lowit-sellers",
+    urlCodigo: [
+      "https://github.com/luis13xd/frontend-restaurante",
+      "https://github.com/luis13xd/backend-restaurante",
+    ],
   },
   {
     titulo: "App Lowit",
@@ -92,15 +89,13 @@ export const projectsData: Proyecto[] = [
       "https://github.com/luis13xd/ponderadosapi/tree/main/usco-ponderado-api",
     ],
   },
-    {
+  {
     titulo: "Portafolio Web",
     descripcion:
       "Web usada como mi portafolio web, tiene animaciones llamativas, adaptada a diferentes pantallas, codigo limpio y estructurado, usé las mejores practicas.",
     tecnologias: ["React", "TypeScript", "Tailwind", "Vite"],
     imagen: portafolio,
     urlDemo: "https://luistrujillo.netlify.app/",
-    urlCodigo: [
-      "https://github.com/luis13xd/luistrujillolopez",
-    ],
+    urlCodigo: ["https://github.com/luis13xd/luistrujillolopez"],
   },
 ];
