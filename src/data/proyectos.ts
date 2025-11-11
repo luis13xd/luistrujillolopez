@@ -37,10 +37,9 @@ export const projectsData: Proyecto[] = [
   {
     titulo: "Huila Explorer",
     descripcion:
-      "Panel de control interactivo para la creación y adiministración de pedidos, visualización de datos en tiempo real y reportes personalizados.",
+      "Red Social para mostrar sitios turisticos del huila, cuenta con su panel administrador para agregar sitios turisticos, administrar usuarios, hacer comentarios a las publicaciones, graficas con metricas...",
     tecnologias: [
       "React",
-      "TypeScript",
       "Node.js",
       "Express",
       "MongoDb",
