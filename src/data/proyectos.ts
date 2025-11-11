@@ -46,7 +46,7 @@ export const projectsData: Proyecto[] = [
       "Tailwind",
     ],
     imagen: huila,
-    urlDemo: "https://sellers.lowit.com.co/login",
+    urlDemo: "https://huila-explorer.netlify.app/",
     urlCodigo: "https://gitlab.com/lowit-team/lowit-sellers",
   },
   {
