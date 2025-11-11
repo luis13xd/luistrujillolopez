@@ -34,6 +34,22 @@ export const projectsData: Proyecto[] = [
     urlCodigo: "https://gitlab.com/lowit-team/lowit-sellers",
   },
   {
+    titulo: "Huila Explorer",
+    descripcion:
+      "Panel de control interactivo para la creación y adiministración de pedidos, visualización de datos en tiempo real y reportes personalizados.",
+    tecnologias: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDb",
+      "Tailwind",
+    ],
+    imagen: seller,
+    urlDemo: "https://sellers.lowit.com.co/login",
+    urlCodigo: "https://gitlab.com/lowit-team/lowit-sellers",
+  },
+  {
     titulo: "App Lowit",
     descripcion:
       "Aplicación móvil para pedir comida, registro de usuarios, exploración de restaurantes, adquirir membresías, realizar pedidos diarios, seguimiento en tiempo real del pedido, historial de tus compra y gestión de tus datos personales.",
