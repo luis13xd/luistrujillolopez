@@ -19,7 +19,7 @@ export const technologiesData = [
   { nombre: "React", color: "from-cyan-300 to-blue-100", img: react },
   { nombre: "Angular", color: "from-red-500 to-red-100", img: angular },
   { nombre: "TypeScript", color: "from-blue-400 to-blue-100", img: typescript },
-  { nombre: "Git", color: "from-orange-500 to-red-100", img: git },
+  { nombre: ".Net", color: "from-cyan-300 to-blue-100", img: net },
   { nombre: "Php", color: "from-indigo-400 to-indigo-50", img: php },
   { nombre: "Html", color: "from-orange-400 to-orange-100", img: html },
   { nombre: "Css", color: "from-blue-400 to-blue-100", img: css },
