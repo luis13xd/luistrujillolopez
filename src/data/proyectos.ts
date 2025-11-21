@@ -21,7 +21,7 @@ export const projectsData: Proyecto[] = [
   {
     titulo: "Seller Center Lowit",
     descripcion:
-      "Panel de control interactivo para la creación y adiministración de pedidos, gestion de planes, visualización de datos en tiempo real y reportes personalizados.",
+      "Panel de control interactivo para la creación y adiministración de pedidos, administrador de menús, gestion de planes, visualización de datos en tiempo real y reportes personalizados.",
     tecnologias: [
       "React",
       "TypeScript",
