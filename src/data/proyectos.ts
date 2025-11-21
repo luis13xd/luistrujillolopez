@@ -21,7 +21,7 @@ export const projectsData: Proyecto[] = [
   {
     titulo: "Seller Center Lowit",
     descripcion:
-      "Panel de control interactivo para la creación y adiministración de pedidos, visualización de datos en tiempo real y reportes personalizados.",
+      "Panel de control interactivo para la creación y adiministración de pedidos, gestion de planes, visualización de datos en tiempo real y reportes personalizados.",
     tecnologias: [
       "React",
       "TypeScript",
@@ -37,7 +37,7 @@ export const projectsData: Proyecto[] = [
   {
     titulo: "Huila Explorer",
     descripcion:
-      "Plataforma web que muestra sitios turisticos del huila, cuenta con su panel administrador para agregar sitios turisticos, administrar usuarios, hacer comentarios a las publicaciones, graficas con metricas...",
+      "Web que muestra sitios turisticos del huila, cuenta con su panel administrador para agregar sitios turisticos, gestionar usuarios, hacer comentarios a los sitios, graficas con metricas.",
     tecnologias: ["React", "Node.js", "Express", "MongoDb", "Tailwind"],
     imagen: huila,
     urlDemo: "https://huila-explorer.netlify.app/",
