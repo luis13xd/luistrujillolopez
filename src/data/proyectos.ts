@@ -12,7 +12,7 @@ export const projectsData: Proyecto[] = [
   {
     titulo: "ARUAL SPORT",
     descripcion:
-      "Plataforma completa de comercio electrónico de ropa deportiva con carrito de compras, categorización, recomendación de prendas, pasarela de pagos y panel administrativo.",
+      "Plataforma completa de comercio electrónico de ropa deportiva con carrito de compras, categorización de prendas, recomendación de prendas, pasarela de pagos, cupones de descuentos y panel administrativo.",
     tecnologias: ["React", "Vite", "Node.js", "MongoDB"],
     imagen: arual,
     urlDemo: "https://arual-sport.netlify.app/",
