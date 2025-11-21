@@ -37,7 +37,7 @@ export const projectsData: Proyecto[] = [
   {
     titulo: "Huila Explorer",
     descripcion:
-      "Red Social para mostrar sitios turisticos del huila, cuenta con su panel administrador para agregar sitios turisticos, administrar usuarios, hacer comentarios a las publicaciones, graficas con metricas...",
+      "Plataforma web que muestra sitios turisticos del huila, cuenta con su panel administrador para agregar sitios turisticos, administrar usuarios, hacer comentarios a las publicaciones, graficas con metricas...",
     tecnologias: ["React", "Node.js", "Express", "MongoDb", "Tailwind"],
     imagen: huila,
     urlDemo: "https://huila-explorer.netlify.app/",
