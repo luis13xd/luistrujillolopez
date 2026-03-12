@@ -25,7 +25,6 @@ export default function TechnologiesSection() {
       id="tecnologias"
       className="min-h-screen flex flex-col items-center mb-0 px-4 sm:px-6 py-18 sm:py-18 lg:py-20"
     >
-      {/* Título */}
       <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-0">
         <Wrench className="text-cyan-400 w-8 h-8 sm:w-10 sm:h-10" />
         <h2 className="text-5xl font-bold text-center">
