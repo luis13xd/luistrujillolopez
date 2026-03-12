@@ -34,7 +34,6 @@ export default function TechnologiesSection() {
         </h2>
       </div>
 
-      {/* Carrusel o grid según tamaño */}
       <div
         className={`relative w-full flex items-center justify-center overflow-hidden max-w-6xl ${
           isSmall ? "flex-col" : ""
