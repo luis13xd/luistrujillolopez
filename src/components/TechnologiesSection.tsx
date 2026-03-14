@@ -111,7 +111,6 @@ export default function TechnologiesSection() {
         )}
       </div>
 
-      {/* Skills */}
       <div className="bg-gradient-to-r from-slate-800/50 to-purple-900/30 p-4 sm:p-6 rounded-2xl border border-purple-500/20 backdrop-blur-sm w-full max-w-6xl mt-6 sm:mt-8">
         <h3 className="text-xl sm:text-2xl font-bold mb-4 text-cyan-400 text-center sm:text-left">
           Otras Habilidades
