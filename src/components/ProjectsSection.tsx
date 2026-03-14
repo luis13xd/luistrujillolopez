@@ -19,7 +19,6 @@ export default function ProjectsSection() {
     if (Array.isArray(url)) {
       url.forEach((u) => window.open(u, "_blank", "noopener,noreferrer"));
     } else {
-      // Si es un string, abrir solo esa URL
       window.open(url, "_blank", "noopener,noreferrer");
     }
   };
