@@ -75,7 +75,8 @@ export default function ProjectsSection() {
                     onClick={() => handleVerDemo(proyecto.urlDemo)}
                     className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:transform hover:-translate-y-1"
                   >
-                    <ExternalLink size={18} />Demo
+                    <ExternalLink size={18} />
+                    Demo
                   </button>
                   {Array.isArray(proyecto.urlCodigo) ? (
                     proyecto.urlCodigo.map((link, idx) => (
