@@ -16,7 +16,6 @@ export default function ProjectsSection() {
       return;
     }
 
-    // Si es un array, abrir todas las URLs
     if (Array.isArray(url)) {
       url.forEach((u) => window.open(u, "_blank", "noopener,noreferrer"));
     } else {
